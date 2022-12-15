@@ -24,8 +24,8 @@ const ProductDetails = () => {
   } = product;
 
   return (
-    <Helmet>
-      <CommonSection />
+    <Helmet title={productName}>
+      <CommonSection title={productName} />
 
       <section>
         <Container>
