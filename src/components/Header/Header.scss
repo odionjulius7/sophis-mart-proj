@@ -1,0 +1,179 @@
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navigation.active__menu {
+    display: block;
+  }
+
+  .navigation {
+    @media only screen and (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.053);
+      z-index: 9999;
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      column-gap: 2.7rem;
+      margin-bottom: 0;
+
+      @media only screen and (max-width: 768px) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        z-index: 99999;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav__item {
+        a {
+          color: var(--primary-color);
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .nav__icons {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+
+    span i {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+    span img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 768px) {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+
+    .cart__icon,
+    .fav__icon {
+      position: relative;
+
+      i {
+        @media only screen and (max-width: 768px) {
+          font-size: 1.2rem !important;
+        }
+      }
+
+      .badge {
+        position: absolute;
+        top: 22%;
+        right: -5%;
+        width: 15px;
+        height: 15px;
+        content: "";
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: 0.7rem;
+        font-weight: 600;
+        z-index: 10;
+      }
+    }
+  }
+
+  .mobile__menu {
+    font-style: 1.3rem;
+    color: var(--primary-color);
+    display: none;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+
+    span {
+      i {
+        @media only screen and (max-width: 768px) {
+          font-size: 1.1rem !important;
+        }
+      }
+    }
+  }
+}
+
+// mobile menu toggle
+.active__menu {
+  display: block;
+}
+
+// multi-used logo
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @media only screen and (max-width: 768px) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  h1 {
+    font-style: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.nav__active {
+  font-weight: 700 !important;
+  //   color: red !important;
+}
+
+.stick__header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 3px 3px 8px -3px#ddd;
+  background: #fff;
+}
