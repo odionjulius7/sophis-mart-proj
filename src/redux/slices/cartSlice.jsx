@@ -21,7 +21,7 @@ const cartSlice = createSlice({
         state.cartItems.push({
           id: newItem.id,
           productName: newItem.productName,
-          image: newItem.imgUrl,
+          imgUrl: newItem.imgUrl,
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price, // initially the price and then keep add to the total with the item price
@@ -37,12 +37,26 @@ const cartSlice = createSlice({
 
       //   getting total price
       state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity)
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
       );
+    },
 
-      console.log(state.totalQuantity);
-      console.log(state.cartItems);
-      console.log(newItem);
+    deleteItem: (state, action) => {
+      const id = action.payload;
+      const existingItem = state.cartItems.find((item) => item.id === id);
+
+      if (existingItem) {
+        state.cartItems = state.cartItems.filter((item) => item.id !== id);
+        state.totalQuantity = state.totalQuantity - existingItem.quantity;
+      }
+
+      state.totalAmount = state.cartItems.reduce(
+        // we keep adding the each item price multiplied by their each quantity number to the
+        // total (of initial value of 0) to get cart total Amount
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
+      );
     },
   },
 });

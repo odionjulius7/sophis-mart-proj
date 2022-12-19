@@ -1,6 +1,6 @@
 import React from "react";
 
-import productImg from "../../assets/images/arm-chair-01.jpg";
+// import productImg from "../../assets/images/arm-chair-01.jpg";
 import { motion } from "framer-motion";
 import "../../styles/ProductCard.scss";
 import { Col } from "reactstrap";
@@ -20,7 +20,7 @@ const ProductCard = ({ item }) => {
         id: item.id,
         productName: item.productName,
         price: item.price,
-        image: item.imgUrl,
+        imgUrl: item.imgUrl,
       })
     );
 
