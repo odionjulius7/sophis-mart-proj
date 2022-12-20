@@ -99,6 +99,19 @@
         line-height: 30px;
         display: none;
         cursor: pointer;
+
+        @media only screen and (max-width: 425px) {
+          left: -50%;
+          width: 80px;
+          padding: 5px;
+        }
+
+        span,
+        a {
+          @media only screen and (max-width: 425px) {
+            font-size: 0.9rem;
+          }
+        }
       }
     }
 
